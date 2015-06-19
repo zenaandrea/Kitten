@@ -1,0 +1,1 @@
+INDEX VERSION 1.127+C:\Davide\Documenti_altro\Scuola\Università\03 Terzo anno\Linguaggi e Compilatori\Laboratorio Compilatori\Kitten\Kitten-master\.metadata\.plugins\org.eclipse.jdt.core

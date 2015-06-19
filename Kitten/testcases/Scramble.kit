@@ -1,0 +1,47 @@
+class Scramble {
+	field int[] array
+	field int legth
+	
+	constructor(int[] array, int length) {
+		this.array := array;
+		this.legth := length
+	}
+	
+	method void main() {
+		int arr := new int[5];
+		arr[0] := 3;
+		arr[1] := -5;
+		arr[2] := 4;
+		arr[3] := 21;
+		arr[4] := 18;
+		
+		Scramble p := new Scramble(arr, 5);
+		p.scramble("", new boolean[this.length])
+	}
+	
+	method void scramble(String choice, boolean[] used) {
+		boolean found := false;
+		
+		for (int pos := 0; pos < this.length; pos := pos+1)
+			if(!used[pos]) then {
+				/* devo generare tutte le permutazioni che iniziano
+				   con this.array[pos] */
+				used[pos] := true;
+				this.scramble(choice.concat(this.array[pos]).concat(" "), used);
+				used[pos] := false;
+				found := true;
+			};
+			
+			if(!found)
+				/* caso base: sono già stati tutti utilizzati */
+				choice.concat("\n").output()
+	}
+	
+	method boolean[] copy(boolean[] original) {
+		boolean[] result := new boolean[this.length];
+	    for (int i := 0; i < this.length; i := i + 1)
+	      result[i] := original[i];
+	
+	    return result
+	}
+}
